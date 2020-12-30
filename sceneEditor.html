@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .BubbleStyle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 999;
+            background-color: aliceblue;
+            width: 380px;
+            height: auto;
+            text-align: right;;
+            padding: 10px;
+        }
+        canvas{
+            border:5px solid blueviolet;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.css">
+</head>
+
+<body>
+    <div>        
+        <input type="button" value="保存场景" onclick="saveScene()">
+        <input type="button" value="添加默认气泡" onclick="AddDefaultBubble()">
+        <input type="button" value="删除选中的气泡" onclick="removeSelectBubble()">
+        <input type="button" value="获取所有气泡ID" onclick="getAllBubbleIds()">
+        <input type="button" value="获取气泡ID" onclick="getBubbleId()">
+    </div>
+    <div class="BubbleStyle" id="BubbleStyle" style="display: none;">
+        <div>
+            <label for="titleFontSize">标题 fontSize：</label>
+            <input type="text" name="titleFontSize" id="titleFontSize">
+        </div>
+        <div>
+            <label for="titleFontWeight">标题 fontWeight：</label>
+            <input type="text" name="titleFontWeight：" id="titleFontWeight">
+        </div>
+        <div>
+            <label for="contentFontSize">内容 fontSize：</label>
+            <input type="text" name="contentFontSize" id="contentFontSize">
+        </div>
+        <div>
+            <label for="contentFontWeight">内容 fontWeight：</label>
+            <input type="text" name="contentFontWeight" id="contentFontWeight">
+        </div>
+        <div>
+            <label for="contentLineHeight：">内容 lineHeight：</label>
+            <input type="text" name="contentLineHeight：" id="contentLineHeight：">
+        </div>
+        <div>
+            <label for="bubbleBackgoundColor">气泡 backgroundColor：</label>
+            <input type="text" name="bubbleBackgoundColor" id="bubbleBackgoundColor">
+        </div>
+        <div>
+            <label for="bubbleBorderColor">气泡 borderColor：</label>
+            <input type="text" name="bubbleBorderColor" id="bubbleBorderColor">
+        </div>
+        <div>
+            <label for="bubbleBorderWidth">气泡 borderwidth：</label>
+            <input type="text" name="bubbleBorderWidth" id="bubbleBorderWidth">
+        </div>  
+        <div>
+            <label for="bubbleAlign">气泡 align：</label>
+            <!-- <input type="text" name="bubbleAlign" id="bubbleAlign"> -->
+            <select name="bubbleAlign" id="bubbleAlign">
+                <option value="center">居中</option>
+                <option value="right">居右</option>
+                <option value="left">居左</option>
+            </select>
+            
+        </div>      
+        <div>
+            <input type="button" value="更新气泡样式" onclick="testUpdateBubbleStyle()">
+            <input type="button" value="关闭" onclick="closeBubbleStyle()">
+        </div>
+
+    </div>
+    <div class="fabric-canvas-wrapper">
+        <canvas id="scene"></canvas>
+        <div id="contextmenu-output"></div>
+    </div>
+    <script src="fabric.min.js"></script>
+    <script src="jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.ui.position.js"></script>
+    <script src="scene.js"></script>
+    <script>
+        initScene('scene',1300,900,'scene1.png',true);
+    </script>
+</body>
+
+</html>

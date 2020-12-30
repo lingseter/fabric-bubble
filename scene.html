@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        canvas{
+            border: 5px red solid;
+        }
+    </style> -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.css">
+</head>
+
+<body>
+    </div>
+    <div class="fabric-canvas-wrapper">
+        <canvas id="scene"></canvas>
+    </div>
+    <script src="fabric.min.js"></script>
+    <script src="jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.ui.position.js"></script>
+    <script src="scene.js"></script>
+    <script>
+        initScene('scene', 1300, 900, 'scene1.png', false);
+        setInterval(() => {
+            let objects = canvas.getObjects();
+            let ids = [];
+            objects.forEach((o) => {
+                let id = o.getObjId();
+                let title = '冷通道';
+                let temp = Math.floor(Math.random() * 10 + 30);
+                let humidity = Math.floor(Math.random() * 10 + 60);
+                let content = '温度：' + temp + '度' + '\n湿度：' + humidity+'%';
+                ids.push(o.getObjId(), );
+                updateBubbleData(id, title, content)
+            })
+        }, 1000);
+    </script>
+</body>
+
+</html>
